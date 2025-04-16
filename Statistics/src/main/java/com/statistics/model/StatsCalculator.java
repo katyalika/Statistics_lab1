@@ -70,7 +70,11 @@ public class StatsCalculator {
 
     private double calculateCoeffOfVariation(double[] data) {
         double mean = StatUtils.mean(data);
-        return mean != 0 ? new StandardDeviation(false).evaluate(data) / mean : Double.NaN;
+        if (mean != 0) {
+            return new StandardDeviation(false).evaluate(data) / mean;
+        } else {
+            return Double.NaN;
+        }
     }
 
     private double[] calculateConfidenceInterval(double[] data) {

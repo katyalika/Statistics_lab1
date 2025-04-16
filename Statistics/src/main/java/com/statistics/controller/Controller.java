@@ -82,7 +82,7 @@ public class Controller {
         if (message.contains(".xlsx")) {
             view.showError("Choose XLSX file");
         } else {
-            view.showError("Wrong file. Please choose correct file.");
+            view.showError("Error");
         }
     }
 }
